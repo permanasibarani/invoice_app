@@ -101,12 +101,7 @@ const InvoiceHistory = () => {
       }}
     >
       <Container maxWidth={false} style={{ width: "1000px" }}>
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          style={{ marginTop: "30px" }}
-        >
+        <Typography variant="h4" align="center" gutterBottom>
           Invoice History
         </Typography>
         <FormControl
