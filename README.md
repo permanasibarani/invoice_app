@@ -14,3 +14,4 @@ This application can be accessed at the following link: [Invoice App](https://67
    - **By Month**: Use the format `10/2024`
    - **By Year**: Use the year `2024`
 5. **Pan and Zoom Feature**: To utilize the pan and zoom capabilities, users can hold and drag the mouse over the timeline to focus on specific data points.
+6. **Unsolved Bug**: Sometimes, we cannot post data when datepicker on today's date. If that happen, please choose a day before.  
