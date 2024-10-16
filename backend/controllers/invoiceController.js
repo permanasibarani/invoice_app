@@ -103,6 +103,7 @@ exports.getInvoices = async (req, res) => {
           ],
         },
       ],
+      order: [['created_timestamp', 'DESC']], // Sort by created_timestamp in descending order
     });
 
     res.status(200).json({
