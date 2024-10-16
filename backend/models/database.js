@@ -1,15 +1,14 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-const sequelize = new Sequelize(
-  "railway",
-  process.env.PGUSER,
-  process.env.PGPASSWORD,
-  {
-    host: process.env.PGHOST,
-    dialect: "postgres",
-    port: process.env.PGPORT,
-  }
-);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+});
 
 module.exports = sequelize;
