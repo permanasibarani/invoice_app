@@ -41,24 +41,9 @@ const addProducts = async () => {
 };
 
 const productIDs = [
+  "000ce902-3ef9-4e02-a9ae-9fsdds26364c9",
   "000ce902-3ef9-4e02-a9ae-9fbc526364c9",
-  "0216d618-9a34-4972-bde7-de97411d2d65",
-  "0559be85-65e1-46f4-9b68-776277fe609d",
-  "0c8babe3-5e4c-44e8-a602-8d7d20a40755",
   "11d1090b-887b-41c2-9390-aa84d24da593",
-  "1341b3db-2965-466f-9031-ff59073b5259",
-  "149d993a-58d3-4bf3-881c-18595a012408",
-  "17771a34-d074-472c-b695-3b7f93fc8674",
-  "218e4260-0df8-4179-abcb-861edf8ce7ca",
-  "22074624-7372-4346-8e82-bb3f8af44374",
-  "235bd9b1-e4c1-4070-897e-198705a4dd60",
-  "23b366d2-17a0-4a80-9bc6-a3a337f36c35",
-  "248c8e56-5999-4eee-81ff-91d3e234b3de",
-  "29296475-b362-4558-94b4-662765135a4f",
-  "2f50acb6-159f-4854-9694-fa9f34f90b65",
-  "3339a8f9-8f6f-4feb-9a84-805e15d918ec",
-  "38ba6bd0-435d-4044-a5a6-73f59d95b9da",
-  "3d0bb0f1-53da-4b26-b411-7de6fc09dbfe",
   "487a3d91-5c8d-4810-b607-a44c379b198e",
 ];
 
@@ -166,10 +151,10 @@ const init = async () => {
   try {
     await sequelize.sync({ force: false }); // Set force: true only for development
     console.log("All tables have been synced!");
-
-    // await addProducts(); // Call to add products
-    // await addInvoicesByMonth(10, 2024, 200); // Adding random invoices
-    // await addInvoicesByYear(2022, 200);
+    addDummyInvoices();
+    // await addProducts();
+    await addInvoicesByMonth(10, 2024, 200);
+    await addInvoicesByYear(2024, 200);
   } catch (error) {
     console.error("Error syncing tables:", error);
   }
