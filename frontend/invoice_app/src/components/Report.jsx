@@ -49,14 +49,14 @@ const Report = () => {
     try {
       let url;
       if (searchType === "date") {
-        url = `http://localhost:5000/api/invoices/getSalesByDate?date=${selectedDate}`;
+        url = `https://invoiceapp-production-0bd7.up.railway.app/api/invoices/getSalesByDate?date=${selectedDate}`;
       } else if (searchType === "month") {
         const month = selectedDate.substring(5, 7); // Get month from date string
         const year = selectedDate.substring(0, 4); // Get year from date string
-        url = `http://localhost:5000/api/invoices/getSalesByMonth?month=${month}&year=${year}`;
+        url = `https://invoiceapp-production-0bd7.up.railway.app/api/invoices/getSalesByMonth?month=${month}&year=${year}`;
       } else if (searchType === "year") {
         const year = selectedDate; // Get year from the text input
-        url = `http://localhost:5000/api/invoices/getSalesByYear?year=${year}`;
+        url = `https://invoiceapp-production-0bd7.up.railway.app/api/invoices/getSalesByYear?year=${year}`;
       }
 
       const response = await fetch(url);

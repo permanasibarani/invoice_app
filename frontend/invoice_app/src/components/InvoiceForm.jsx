@@ -48,7 +48,7 @@ const InvoiceForm = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/getProducts"
+          "https://invoiceapp-production-0bd7.up.railway.app/api/products/getProducts"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch products");
@@ -118,7 +118,7 @@ const InvoiceForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/invoices/postInvoice",
+        "https://invoiceapp-production-0bd7.up.railway.app/api/invoices/postInvoice",
         {
           method: "POST",
           headers: {

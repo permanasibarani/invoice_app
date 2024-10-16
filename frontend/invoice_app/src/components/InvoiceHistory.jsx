@@ -40,7 +40,7 @@ const InvoiceHistory = () => {
     const fetchInvoices = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/invoices/getInvoices?page=${currentPage}&limit=${invoicesPerPage}`
+          `https://invoiceapp-production-0bd7.up.railway.app/api/invoices/getInvoices?page=${currentPage}&limit=${invoicesPerPage}`
         ); // Fetch with pagination parameters
         if (!response.ok) {
           throw new Error("Failed to fetch invoices");
@@ -73,7 +73,7 @@ const InvoiceHistory = () => {
   const handleCardClick = async (invoiceId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/invoices/getInvoiceDetail?invoice_id=${invoiceId}`
+        `https://invoiceapp-production-0bd7.up.railway.app/api/invoices/getInvoiceDetail?invoice_id=${invoiceId}`
       );
       if (!response.ok) throw new Error("Failed to fetch Invoice details");
       const data = await response.json();
