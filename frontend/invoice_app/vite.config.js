@@ -1,8 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/vite-react-deploy/",
+  base: "./", // Menggunakan path relatif
+  build: {
+    outDir: "dist",
+    assetsDir: "assets", // Lokasi folder assets di dist
+  },
 });
